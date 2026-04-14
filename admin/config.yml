@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main 
+  branch: main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -8,12 +8,14 @@ public_folder: "/images/uploads"
 collections:
   - name: "products"
     label: "Clothing Products"
-    folder: "products" # Products yahan save honge
+    folder: "products"
     create: true
-    format: "json" # Hum json format use karenge taaki JS aaram se read kare
+    extension: "json"
+    format: "json"
+    slug: "{{title}}"
     fields:
       - {label: "ID", name: "id", widget: "number"}
       - {label: "Category", name: "cat", widget: "select", options: ["men", "women"]}
-      - {label: "Product Name", name: "name", widget: "string"}
+      - {label: "Product Name", name: "title", widget: "string"}
       - {label: "Price", name: "price", widget: "number"}
       - {label: "Image URL", name: "img", widget: "image"}
